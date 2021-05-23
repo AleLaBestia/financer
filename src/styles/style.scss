@@ -1,0 +1,476 @@
+* {
+  user-select: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root,
+body,
+html {
+  background-color: rgb(32, 38, 53);
+  height: 100vh;
+  width: 100vw;
+}
+
+//NAVABR
+nav {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  background-color: rgb(24, 26, 31);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+
+  .logo,
+  .header-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .logo {
+    width: 68%;
+    padding-left: 3%;
+    img {
+      height: 52%;
+      width: auto;
+      margin-right: 2%;
+    }
+    h1 {
+      font-size: 18px;
+      font-family: "Montserrat";
+      color: white;
+    }
+  }
+
+  .header-links {
+    width: 33%;
+    justify-content: space-around;
+    li {
+      list-style: none;
+      color: white;
+      font-size: 15px;
+      font-family: "Montserrat";
+      &:hover {
+        transform: scale(1.05);
+        color: rgb(255, 240, 104);
+      }
+    }
+
+    #time-contain {
+      width: 205px;
+      color: white;
+      font-family: "Montserrat";
+      font-size: 13px;
+    }
+  }
+}
+
+// NEWS PAGE
+.news {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(32, 38, 53);
+
+  #buffer {
+    height: 10vh;
+    width: 100vw;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 13vh;
+
+    h1 {
+      text-align: center;
+      color: white;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 63px;
+      letter-spacing: 2px;
+    }
+
+    form {
+      width: 20%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      input {
+        height: 27px;
+        width: 40%;
+        background-color: transparent;
+        border: none;
+        padding-left: 8px;
+        font-size: 14px;
+        color: white;
+        transition: 0.3s;
+        &:focus {
+          border: yellow 1px solid;
+          width: 70%;
+        }
+        &::-webkit-input-placeholder {
+          color: white;
+        }
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        ion-icon {
+          font-size: 23px;
+          color: white;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .topics {
+    width: 85vw;
+    margin: 0 auto;
+    color: white;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      li {
+        display: inline-block;
+        font-size: 14.5px;
+        font-family: "Montserrat";
+        &:hover {
+          color: rgb(255, 240, 104);
+          cursor: pointer;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  // LARGE JUMBOTRON NEWS
+  .jumbotron {
+    display: flex;
+    background-color: #1f2024;
+    color: white;
+    width: 90vw;
+    margin: 20px auto;
+    transition: 0.2s;
+    height: 60%;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      min-width: 45vw;
+      max-width: 45vw;
+      height: 100%;
+      margin-right: 26px;
+    }
+
+    .jumbotron-content {
+      display: flex;
+      flex-direction: column;
+      font-family: "Montserrat";
+      small {
+        width: 80%;
+        font-size: 15.5px;
+      }
+      h1 {
+        font-size: 48.5px;
+        font-family: "Times New Roman", Times, serif;
+        line-height: 50px;
+        width: 97%;
+        margin: 2% 0 5% 0;
+      }
+      p {
+        color: #d49677;
+        margin-top: 3%;
+      }
+    }
+  }
+
+  // SECONDARY NEWS ARTICLES
+  .secondary-one,
+  .secondary-two {
+    display: flex;
+    height: 50%;
+    width: 95vw;
+    margin: 0 auto;
+    background-color: rgb(32, 38, 53);
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .article {
+      display: flex;
+      flex-direction: column;
+      height: 85%;
+      width: 220px;
+      margin: 3% 35px;
+      color: white;
+      scroll-snap-align: center;
+      font-family: "Montserrat";
+      border-top: 1.5px solid rgb(255, 240, 104);
+      padding-top: 7%;
+      text-overflow: ellipsis;
+
+      &:hover {
+        border-top: 2px solid #d49677;
+      }
+
+      .secondary-pic {
+        width: 100%;
+        height: 40%;
+        object-fit: cover;
+      }
+
+      p {
+        color: #d49677;
+        margin: 2% 0;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: smaller;
+        font-weight: bolder;
+        text-align: left;
+        margin-bottom: 10px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 15px;
+      }
+      small {
+        font-size: 12.5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+
+  .secondary-two {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: auto;
+    transform: translateX(-3%);
+
+    a {
+      width: 39%;
+      margin: 1% 35px;
+
+      .article {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2%;
+        &:hover {
+          transform: scale(1.06);
+          border-top: 2px solid #d49677;
+        }
+        .secondary-pic {
+          width: 55%;
+          height: 140px;
+          object-fit: contain;
+        }
+
+        .article-content {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+// MARKET DATA
+.market-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #buffer {
+    height: 10vh;
+    width: 100vw;
+  }
+
+  // DATA HEADERS
+  .market-headers {
+    display: flex;
+    background-color: rgb(32, 38, 53);
+    height: 17vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    font-size: 16.5px;
+    font-family: "Baloo Chettan 2", cursive;
+
+    .base-filters {
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      width: 12%;
+      justify-content: space-between;
+    }
+
+    select {
+      background-color: transparent;
+      border: none;
+      color: rgb(255, 240, 104);
+      font-size: 11.5px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      width: 97vw;
+
+      div {
+        width: 11.5vw;
+        &:nth-of-type(1) {
+          text-align: start;
+          display: block;
+          width: 9vw;
+        }
+        &:nth-of-type(3),
+        &:nth-of-type(5),
+        &:nth-of-type(6) {
+          text-align: end;
+          display: block;
+          width: 16.5vw;
+        }
+        &:nth-of-type(4),
+        &:nth-of-type(7) {
+          text-align: end;
+          display: block;
+          width: 12.5vw;
+        }
+      }
+    }
+  }
+
+  // DATA TABLE
+  .table {
+    width: 98vw;
+    background-color: rgb(32, 38, 53);
+    color: white;
+    overflow-y: scroll;
+    height: 75vh;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .data-rows {
+      display: flex;
+      align-items: center;
+      width: 100vw;
+      height: 68px;
+      border-bottom: 1px rgba(128, 128, 128, 0.253) solid;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+        border-bottom: 1px rgb(255, 240, 104) solid;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        width: 11vw;
+        font-size: 14px;
+        img {
+          width: 18px;
+          vertical-align: middle;
+          margin-right: 18px;
+        }
+
+        &:nth-of-type(1) {
+          text-align: center;
+          display: block;
+          width: 10vw;
+        }
+        &:nth-of-type(3),
+        &:nth-of-type(5),
+        &:nth-of-type(6) {
+          text-align: end;
+          display: block;
+          width: 17vw;
+        }
+        &:nth-of-type(4),
+        &:nth-of-type(7) {
+          text-align: end;
+          display: block;
+          width: 11.5vw;
+        }
+      }
+    }
+  }
+
+  // MODAL CONTENT
+  .modal-content {
+    width: 58vw;
+    background-color: #121722;
+    padding: 20px 50px;
+    color: white;
+    font-family: "Baloo Chettan 2", cursive;
+    height: 91%;
+    overflow: hidden;
+
+    h1,
+    h3 {
+      text-decoration: underline;
+      font-size: 18.5px;
+      letter-spacing: 1px;
+    }
+    h3 {
+      font-size: 16.5px;
+      margin-bottom: 10px;
+    }
+
+    article {
+      margin: 30px 0;
+    }
+
+    .description {
+      letter-spacing: 0.2px;
+      line-height: 21px;
+      font-family: "Baloo Chettan 2", cursive;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      font-size: 15.5px;
+      a {
+        color: rgb(255, 240, 104);
+      }
+    }
+  }
+
+  .modal-background {
+    backdrop-filter: blur(2.2px) brightness(85%);
+  }
+
+  .modal-close {
+    position: absolute;
+    right: 20%;
+  }
+}
